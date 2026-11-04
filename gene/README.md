@@ -2,9 +2,7 @@
 
 ### Context
 Hypothetical experiment: human macrophages loaded with acetylated LDL (a model of
-foam-cell formation in atherosclerosis) **down-regulate** five miRNAs:
-
-`hsa-miR-33a-5p`, `hsa-miR-33b-5p`, `hsa-miR-144-3p`, `hsa-miR-758-3p`, `hsa-miR-106b-5p`
+foam-cell formation in atherosclerosis) **down-regulate** five miRNAs. 
 
 The goal is to predict their targets, find the genes shared by all of them and
 explore the pathways those genes are involved in.
@@ -36,7 +34,7 @@ conda activate geneact1
 ### Usage
 1. Go to [TargetScanHuman 8.0](https://www.targetscan.org/vert_80/), search each
    miRNA (species: *Human*) and click **Download table**.
-2. Rename each Excel file with the miRNA name, e.g. `miR-144-3p.xlsx`.
+2. Rename each Excel file with the miRNA name, e.g. `miR-xxx-xx.xlsx`.
    The file name is used as the miRNA label in the output.
 3. Place the script in the same folder as the Excel files and run:
    ```bash
@@ -45,21 +43,16 @@ conda activate geneact1
 
 ### Example output
 ```
-miR-106b-5p: 1385 unique targets  -> saved miR-106b-5p.txt
-miR-144-3p: 1048 unique targets  -> saved miR-144-3p.txt
-miR-33-5p: 545 unique targets  -> saved miR-33-5p.txt
-miR-758-3p: 271 unique targets  -> saved miR-758-3p.txt
+miR-wwww-ww: x unique targets  -> saved miR-wwww-ww.txt
+miR-yyyy-yy: xx unique targets  -> saved miR-xxxx-xx.txt
+miR-aaaa-aa: xxxx unique targets  -> saved miR-aaaa-aa.txt
+miR-bbbb-bb: xxx unique targets  -> saved miR-bbbb-bb.txt
 
-Most targets:   miR-106b-5p (1385)
-Fewest targets: miR-758-3p (271)
+Most targets:   miR-aaaa-aa (xxxx)
+Fewest targets: miR-wwww-ww (x)
 
-Targets shared by all 4 miRNAs (5 genes):
-  ABCA1
-  KPNA3
-  SCN1A
-  SNTB2
-  TSC22D2
+Targets shared by all 4 miRNAs (3 genes):
+  gene
+  gene
+  gene
 ```
-
-### Notes
-- **miR-33a-5p and miR-33b-5p share the same seed sequence**,
