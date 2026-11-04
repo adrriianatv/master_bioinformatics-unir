@@ -2,16 +2,24 @@
 TargetScan target list processor
 
 What this script does:
-1. Finds every Excel file (.xlsx) downloaded from TargetScan in the current folder (one file per miRNA).
-2. Extracts the "Target gene" column from each file.
-3. Removes duplicates and saves the gene list as a .txt file (one gene per line), ready to upload to the Venn diagram tool.
-4. Prints how many unique targets each miRNA has.
+1. Finds every Excel file (.xlsx) downloaded from TargetScan in the current folder (one file per miRNA)
+2. Extracts the "Target gene" column from each file
+3. Removes duplicates and saves the gene list as a .txt file (one gene per line), ready to upload to the Venn diagram tool
+4. Prints how many unique targets each miRNA has
 5. Prints the genes shared by ALL miRNAs (the centre of the Venn diagram).
 
 Before running:
 - Install the libraries once: pip install pandas openpyxl
-- Put this script in the SAME folder as the TargetScan Excel files.
-- Rename each Excel with the miRNA name, e.g. "miR-33a-5p.xlsx", because the script uses the file name as the miRNA name.
+- Put this script in the SAME folder as the TargetScan Excel files
+- Rename each Excel with the miRNA name, e.g. "miR-33a-5p.xlsx", because the script uses the file name as the miRNA name
+
+Setting the env:
+Create the environment "geneact1" with Python and the libraries we need (conda-forge is miniforge's default channel)
+conda create -n geneact1 python=3.12 pandas openpyxl -y
+
+(Openpyxl es una biblioteca de Python que sirve para leer, escribir, modificar y dar estilo 
+a archivos de Microsoft Excel en formato .xlsx, .xlsm, .xltx y .xltm sin necesidad de tener 
+Excel instalado en el ordenador)
 '''
 
 import glob          # lets us search for files matching a pattern (e.g. *.xlsx)
