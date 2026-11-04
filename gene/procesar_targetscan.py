@@ -1,6 +1,6 @@
 '''
 TargetScan target list processor
--------------------------------------
+
 What this script does:
 1. Finds every Excel file (.xlsx) downloaded from TargetScan in the current folder (one file per miRNA).
 2. Extracts the "Target gene" column from each file.
@@ -60,9 +60,7 @@ for excel_file in sorted(glob.glob("*.xlsx")):
     print(f"{mirna_name}: {len(genes)} unique targets  -> saved {mirna_name}.txt")
 
 '''
------------------------------------------------------------------------------
 Most and fewest targets
------------------------------------------------------------------------------
 max()/min() with key=... compare miRNAs by the size of their gene set.
 '''
 most = max(target_lists, key=lambda m: len(target_lists[m]))
@@ -71,9 +69,7 @@ print(f"\nMost targets:   {most} ({len(target_lists[most])})")
 print(f"Fewest targets: {fewest} ({len(target_lists[fewest])})")
 
 '''
------------------------------------------------------------------------------
 Common targets (genes present in ALL lists)
------------------------------------------------------------------------------
 set.intersection(*...) keeps only the genes that appear in every set
 The * "unpacks" the dictionary values so each set is passed separately
 '''
